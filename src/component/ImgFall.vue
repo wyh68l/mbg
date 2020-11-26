@@ -4,7 +4,7 @@
             <li v-for="(item,index) in el" :key="index">
                 <div style="position: relative;"  >
                     <image lazy-load :src="item.path || item.img" class="bg-img animated bounceIn" alt=""
-                         @tap="imgView(item.path || item.img)" @longpress="downImg(item.path || item.img)" mode="widthFix"/>
+                         @tap="imgView(item.path || item.img,index)" @longpress="downImg(item.path || item.img)" mode="widthFix"/>
                 </div>
             </li>
         </ul>
@@ -47,8 +47,8 @@
                 this.newWaterfallData = newWaterfallData;
                 // console.log(this.newWaterfallData);
             },
-            imgView(url){
-                this.$emit('imgView',url);
+            imgView(url,index){
+                this.$emit('imgView',{url,index});
             },
             downImg(url){
                 //#ifdef APP-PLUS

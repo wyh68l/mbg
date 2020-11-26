@@ -88,7 +88,7 @@
                     }else {
                         this.$set(this,'imgs',this.imgs.concat(res.data.res.vertical || []))
                     }
-                    this.imgs.forEach(item =>{
+                    this.imgs.forEach((item) =>{
                         this.imgsUrl.push(item.img)
                     })
                 })
@@ -103,7 +103,7 @@
                 this.order = this.type?'new':'hot';
                 this.getInfo(this.id, this.order, this.skip,true);
             },
-            imgView(url){
+            imgView({url,index}){
                 this.status = false;
                 uni.showLoading({
                     title:'加载中...',
@@ -111,10 +111,25 @@
                 })
                 setTimeout(()=>{
                     let currentUrl = url
+                    let tempArr = [];
+                    if(parseInt(index) >= 10){
+                        this.imgsUrl.forEach((item,idx) =>{
+                            if(idx >= parseInt(index)-10 && idx <= 10+parseInt(index)){
+                                tempArr.push(item)
+                            }
+                        })
+                    }else {
+                        this.imgsUrl.forEach((item,idx) =>{
+                            if(idx <= 10){
+                                tempArr.push(item)
+                            }
+                        })
+                    }
+
                     let that = this;
                     uni.previewImage({
                         current: currentUrl, // 当前显示图片的http链接
-                        urls: this.imgsUrl,
+                        urls: tempArr,
                         longPressActions: {
                             itemList: ['保存图片'],
                             success: function(data) {
