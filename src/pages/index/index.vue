@@ -1,49 +1,32 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+    <div class="content">
+        <ToolsList></ToolsList>
+    </div>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+    import ToolsList from '@component/ToolsList'
+    export default {
+        components:{ToolsList},
+        name: "Tools",
+        data(){
+            return {
 
-		},
-		methods: {
+            }
+        },
+        created(){
 
-		}
-	}
+        },
+        methods:{
+
+        }
+    }
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+<style lang="scss" scoped>
+    .content {
+        padding: 80upx 0;
+        padding-bottom: 100upx;
+        background: linear-gradient(to bottom, rgb(35, 37, 38), rgb(65, 67, 69));
+    }
 </style>

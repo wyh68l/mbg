@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*定义全局计算移动端像素*/
+/*定义margin*/
+/*定义padding*/
+/*定义line-height*/
+/*定义font-size*/
+/*定义顔色*/
+/* 主题颜色 */
+/*
+ #4568DC 蓝色
+ #B06AB3 紫色
+ #43C6AC 绿色
+ #ffc3a0 黄色
+ #FFAFBD 粉色
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: bottom;
+  width: 100%;
+}
+/*清除浮动*/
+.clearfix::after,
+.clearfix::before {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+/*# sourceMappingURL=base.css.map */
