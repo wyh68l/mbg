@@ -61,7 +61,7 @@
             this.searchEmoji();
             setTimeout(()=>{
                 uni.showToast({//提示
-                    title:'长按可以保存图片哦~',
+                    title:'长按可以保存图片哦~',icon:"none"
                 })
             },2000)
             // 设置应用非全屏显示！
@@ -75,7 +75,7 @@
         methods: {
             compareVal(){
                 if (this.options.w == '') {
-                    uni.showToast(({title: '请输入搜索关键字哦~'}))
+                    uni.showToast(({title: '请输入搜索关键字哦~',icon:"none"}))
                     return true;
                 }else {
                     return false;

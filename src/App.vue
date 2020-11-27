@@ -72,5 +72,6 @@
     @import url("common/public_css/uni.css");
     @import url("common/public_css/animate.min.css");
     @import url("common/public_css/animate_base.css");
+    @import url("common/public_css/iconfont.css");
 
 </style>

@@ -17,7 +17,7 @@
         <!--</div>-->
 
         <ImgFall :imgList="imgs" @imgView="imgView"></ImgFall>
-        <BackTop @backTop="status = false"></BackTop>
+        <BackTop @backTop="status = false" :isShow="isShow"></BackTop>
     </div>
 </template>
 
@@ -51,7 +51,8 @@
                 page:1,
                 status:false,
                 type:true,
-                navTop:0
+                navTop:0,
+                isShow:false
             };
         },
         watch:{
@@ -70,12 +71,22 @@
             setTimeout(()=>{
                 uni.showToast({//提示
                     title:'长按可以保存图片哦~',
+                    icon:'none'
                 })
             },2000)
             // 设置应用非全屏显示！
             //#ifdef APP-PLUS
             plus.navigator.setFullscreen(false);
             //#endif
+        },
+        // 监听页面滚动事件
+        onPageScroll: function (e) {
+            console.log(e.scrollTop);
+            if (e.scrollTop >= 700) {
+                this.isShow = true;
+            } else {
+                this.isShow = false;
+            }
         },
         onShow(){
             this.navTop = this.customBar;
@@ -88,7 +99,7 @@
                     }else {
                         this.$set(this,'imgs',this.imgs.concat(res.data.res.vertical || []))
                     }
-                    this.imgs.forEach((item) =>{
+                    this.imgs.forEach(item =>{
                         this.imgsUrl.push(item.img)
                     })
                 })
@@ -103,7 +114,7 @@
                 this.order = this.type?'new':'hot';
                 this.getInfo(this.id, this.order, this.skip,true);
             },
-            imgView({url,index}){
+            imgView(url){
                 this.status = false;
                 uni.showLoading({
                     title:'加载中...',
@@ -111,25 +122,10 @@
                 })
                 setTimeout(()=>{
                     let currentUrl = url
-                    let tempArr = [];
-                    if(parseInt(index) >= 10){
-                        this.imgsUrl.forEach((item,idx) =>{
-                            if(idx >= parseInt(index)-10 && idx <= 10+parseInt(index)){
-                                tempArr.push(item)
-                            }
-                        })
-                    }else {
-                        this.imgsUrl.forEach((item,idx) =>{
-                            if(idx <= 10){
-                                tempArr.push(item)
-                            }
-                        })
-                    }
-
                     let that = this;
                     uni.previewImage({
                         current: currentUrl, // 当前显示图片的http链接
-                        urls: tempArr,
+                        urls: that.imgsUrl,
                         longPressActions: {
                             itemList: ['保存图片'],
                             success: function(data) {
