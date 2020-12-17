@@ -10,6 +10,14 @@
       }
     },
     {
+      "path": "pages/tools/enjoy",
+      "style": {
+        "navigationStyle":"custom"
+        // "navigationBarTitleText": "",
+        // "navigationBarBackgroundColor": "#83a4d4"
+      }
+    },
+    {
       "path": "pages/more/index",
       "style": {
         "navigationBarTitleText": "关于",

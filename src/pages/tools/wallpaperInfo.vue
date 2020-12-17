@@ -15,7 +15,7 @@
         <!--<div class="imgs">-->
             <!--<img v-lazy="pic.img" lazy class="pic-li animated bounceIn" v-for="(pic,index) of imgs" :key="index" @tap="imgView"/>-->
         <!--</div>-->
-
+        <ad unit-id="adunit-f5692567ae457fbd" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
         <ImgFall :imgList="imgs" @imgView="imgView"></ImgFall>
         <BackTop @backTop="status = false" :isShow="isShow"></BackTop>
     </div>
@@ -81,7 +81,7 @@
         },
         // 监听页面滚动事件
         onPageScroll: function (e) {
-            console.log(e.scrollTop);
+            // console.log(e.scrollTop);
             if (e.scrollTop >= 700) {
                 this.isShow = true;
             } else {

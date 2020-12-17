@@ -12,6 +12,7 @@
                 </div>
             </div>
         </div>
+        <ad unit-id="adunit-2b6acfd16ae9e728" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
     </div>
 </template>
 
@@ -70,7 +71,7 @@
             margin-bottom: 20px;
 
             &:last-of-type{
-                margin-bottom: 0;
+                /*margin-bottom: 0;*/
             }
 
             img {

@@ -12,7 +12,7 @@
                 <text style="color: #fff;font-size: 30upx;" @click="searchEmoji(true)">搜索</text>
             </view>
         </view>
-
+        <ad unit-id="adunit-8f5a6326cbfa9680" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
         <ImgFall :imgList="imgs" @imgView="imgView" :style="{'margin-top':navTop}"></ImgFall>
         <BackTop @backTop="status = false"></BackTop>
     </div>

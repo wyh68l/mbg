@@ -25,13 +25,14 @@
 
 <style>
     page{
-        height: 100%;
-        background: linear-gradient(to bottom, rgb(35, 37, 38), rgb(65, 67, 69));
+        /*height: 100%;*/
+
     }
 </style>
 <style lang="scss" scoped>
     .content {
+        background: linear-gradient(to bottom, rgb(35, 37, 38), rgb(65, 67, 69));
         padding: 80upx 0;
-        padding-bottom: 100upx;
+        /*padding-bottom: 100upx;*/
     }
 </style>
