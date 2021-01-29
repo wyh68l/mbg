@@ -43,11 +43,10 @@
                 options: {
                     start: 0,
                     over: false,
-                    w: '马保国'
+                    w: ''
                 },
                 options2: {
                     size:50,
-                    w: '马保国'
                 },
                 navTop:0
             };

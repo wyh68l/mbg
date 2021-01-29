@@ -3,9 +3,9 @@
 
         <!--#ifdef MP-WEIXIN || H5-->
         <view class="tip animated fadeInUp">
-            <image src="../../static/logo.png" v-if="!hasUserInfo"></image>
+            <image src="../../static/logo.jpg" v-if="!hasUserInfo"></image>
             <image :src="userInfo.avatarUrl" v-else></image>
-            <text>年轻人，耗子尾汁</text>
+            <text>关注我！你就是最靓的崽！</text>
         </view>
         <!--#endif-->
 
@@ -23,11 +23,11 @@
         <view class="money animated fadeInUp">
             <view style="text-align: center;">
                 <image :src="imgList[0]" @tap="imgView" :data-src="imgList[0]"></image>
-                <text>小程序</text>
+                <text>更多功能小程序</text>
             </view>
             <view style="text-align: center;">
                 <image :src="imgList[1]" @tap="imgView" :data-src="imgList[1]"></image>
-                <text>公众号</text>
+                <text>更有趣的公众号</text>
             </view>
         </view>
 

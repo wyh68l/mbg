@@ -40,6 +40,12 @@
       }
     },
     {
+      "path": "pages/tools/videoList",
+      "style": {
+        "navigationStyle":"custom"
+      }
+    },
+    {
       "path": "pages/tools/emoji",
       "style": {
         "navigationStyle":"custom"

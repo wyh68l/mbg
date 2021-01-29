@@ -125,7 +125,7 @@
                     let that = this;
                     uni.previewImage({
                         current: currentUrl, // 当前显示图片的http链接
-                        urls: that.imgsUrl,
+                        urls: [currentUrl],
                         longPressActions: {
                             itemList: ['保存图片'],
                             success: function(data) {

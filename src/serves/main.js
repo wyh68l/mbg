@@ -33,13 +33,32 @@ export function getApkUrl() {
         method:'get'
     })
 }
+//随机视频接口（普通）
+export function getRandomVideoMBG(data) {
+    return fetch({
+        url:baseUrl+'/api/app/jingxuanshipin',
+        // url:'/api/app/videoUrl',
+        params:data,
+        method:'get'
+    })
+}
+//随机视频接口(刺激)
+export function getRandomVideoMy(data) {
+    return fetch({
+        //url:'/gaotian/video.php?_t='+code,
+        url:baseUrl+'/api/app/videoUrl',
+        // url:'/api/app/videoUrl',
+        params:data,
+        method:'get'
+    })
+}
 
 //获取版本更新
 export function getVersion(data) {
     return fetch({
         url:baseUrl+'/api/app/version',
         method:'get',
-        data
+        params:data
     })
 }
 
